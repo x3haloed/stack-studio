@@ -44,9 +44,10 @@ Check that each skill in `skills/<skill-name>/` satisfies the standard contract:
 To allow the stack to be installed as a plugin, verify or create the appropriate manifest files (see [Universal Layout](references/universal-layout.md)):
 
 - **Root `plugin.json`**: For open standard agent plugins, Cursor, OpenAI Codex, Antigravity, and GitHub Copilot.
+- **`.claude-plugin/plugin.json`**: For Anthropic Claude Code plugin discovery.
 - **`.cursor-plugin/plugin.json`**: For Cursor IDE native discovery.
 - **`mcp.json` / `mcp_config.json`**: When tools or external servers are bundled.
-- **`CLAUDE.md` / `AGENTS.md`**: For repository-level agent guidance.
+- **`AGENTS.md` / `CLAUDE.md`**: For repository-level agent guidance.
 
 ### 4. Perform a Clean Review Pass
 

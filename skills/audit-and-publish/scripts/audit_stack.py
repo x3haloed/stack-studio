@@ -165,6 +165,7 @@ class StackAuditor:
     def _audit_manifests_and_configs(self):
         manifest_checks = [
             ("plugin.json", self.root / "plugin.json"),
+            (".claude-plugin/plugin.json", self.root / ".claude-plugin" / "plugin.json"),
             (".cursor-plugin/plugin.json", self.root / ".cursor-plugin" / "plugin.json"),
             ("mcp.json", self.root / "mcp.json"),
             ("mcp_config.json", self.root / "mcp_config.json"),
@@ -202,15 +203,19 @@ class StackAuditor:
         # 1. Anthropic Claude Code
         claude_score = 0
         claude_reasons = []
-        if (self.root / "skills").exists() or (self.root / ".claude" / "skills").exists():
+        if ".claude-plugin/plugin.json" in self.manifests_found:
             claude_score += 40
+            claude_reasons.append("Claude Code plugin manifest (.claude-plugin/plugin.json) present")
+        elif (self.root / "SKILL.md").exists():
+            claude_score += 40
+            claude_reasons.append("Root SKILL.md present for standalone skill discovery")
+
+        if (self.root / "skills").exists() or (self.root / ".claude" / "skills").exists():
+            claude_score += 30
             claude_reasons.append("Skills directory available")
-        if (self.root / "CLAUDE.md").exists():
+        if (self.root / "CLAUDE.md").exists() or (self.root / "AGENTS.md").exists():
             claude_score += 30
-            claude_reasons.append("Root CLAUDE.md instructions present")
-        if (self.root / "mcp.json").exists() or (self.root / ".claude" / "settings.json").exists():
-            claude_score += 30
-            claude_reasons.append("MCP / settings configuration present")
+            claude_reasons.append("Agent guidelines (CLAUDE.md or AGENTS.md) present")
 
         # 2. Cursor IDE
         cursor_score = 0

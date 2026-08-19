@@ -12,7 +12,9 @@ This reference blueprint shows how to configure a single repository so it can be
 ├── AGENTS.md                          # Universal agent guidelines (cross-platform standard)
 ├── CLAUDE.md                          # Claude Code root instructions
 ├── GEMINI.md                          # Antigravity project-level rules (optional)
-├── plugin.json                        # Root plugin manifest (Cursor, OpenAI, Copilot, Antigravity)
+├── plugin.json                        # Root plugin manifest (OpenAI, Copilot, Antigravity, open standard)
+├── .claude-plugin/                    # Claude Code plugin manifest
+│   └── plugin.json
 ├── .cursor-plugin/                    # Cursor IDE plugin manifest
 │   └── plugin.json
 ├── mcp.json                           # Standard MCP config (Cursor, Claude, Copilot, OpenAI)

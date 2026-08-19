@@ -28,9 +28,19 @@ Stack Studio is a meta-suite of skills, reference blueprints, and verification t
 ## Installation Across Platforms
 
 ### 1. Anthropic Claude Code
-Clone or link into your project's `.claude/skills/` directory (or globally in `~/.claude/skills/`):
+
+**Option A: Install as a Plugin (Recommended)**
+Clone into your Claude plugins directory (or pass `--plugin-dir /path/to/stack-studio`):
 ```bash
-git clone https://github.com/x3haloed/stack-studio.git ~/.claude/skills/stack-studio
+git clone https://github.com/x3haloed/stack-studio.git ~/.claude/plugins/stack-studio
+```
+Claude Code will automatically discover the `.claude-plugin/plugin.json` manifest and load all nested skills.
+
+**Option B: Install as Standalone Skills**
+If you prefer adding skills directly to `~/.claude/skills/` without plugin packaging, clone the repository and symlink the individual skill folders:
+```bash
+git clone https://github.com/x3haloed/stack-studio.git ~/Repos/stack-studio
+ln -s ~/Repos/stack-studio/skills/* ~/.claude/skills/
 ```
 
 ### 2. Cursor IDE

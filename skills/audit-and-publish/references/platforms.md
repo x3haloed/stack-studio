@@ -6,18 +6,33 @@ This document provides exact manifest schemas, directory layouts, discovery path
 
 ## 1. Anthropic Claude Code
 
-Claude Code supports prompt-based workflows and skills invoked directly or via slash commands (e.g., `gstack`, `/review`).
+Claude Code supports modular capabilities either packaged as **Plugins** or as standalone **Skills**.
 
-### Discovery Locations
-- **Project Scope:** `./.claude/` (committed to version control for team sharing)
-- **Global Scope:** `~/.claude/` (user-level configuration)
+### Discovery & Plugin Architecture
+- **Official Plugin Manifest:** `.claude-plugin/plugin.json` located at the root of the plugin directory.
+- **Plugin Discovery Locations:** `~/.claude/plugins/<plugin-name>/` or loaded via `claude --plugin-dir /path/to/plugin`.
+- **Standalone Skills Location:** `~/.claude/skills/<skill-name>/SKILL.md` (individual skill folders directly inside `~/.claude/skills/`). Claude Code does not recursively scan subdirectories of `~/.claude/skills/` looking for nested skill bundles; a bundle repo must either be installed as a plugin with `.claude-plugin/plugin.json` or have its individual skill folders symlinked into `~/.claude/skills/`.
+- **Important Context Rule:** A `CLAUDE.md` located inside a plugin repository is **not** loaded as project context when the plugin is installed. Project instructions only load from the active workspace root or `~/.claude/CLAUDE.md`.
 
-### Directory Layout
+### Manifest (`.claude-plugin/plugin.json`)
+```json
+{
+  "name": "my-plugin",
+  "version": "1.0.0",
+  "description": "Short description of the plugin and its capabilities.",
+  "author": {
+    "name": "Author Name"
+  },
+  "skills": "./skills/"
+}
+```
+
+### Directory Layout (Plugin Mode)
 ```text
 my-stack/
-├── CLAUDE.md                # System instructions & operating guidelines
-├── settings.json            # Project-specific permissions & tool config
-├── skills/                  # Skills directory
+├── .claude-plugin/
+│   └── plugin.json          # Required Claude Code plugin manifest
+├── skills/                  # Skills directory discovered by plugin
 │   └── <skill-name>/
 │       ├── SKILL.md         # YAML frontmatter + instructions
 │       ├── scripts/         # Executable helper scripts
@@ -29,8 +44,9 @@ my-stack/
 ```
 
 ### Installation
-- **Local/Team:** Clone or symlink the stack into `./.claude/skills/` or `~/.claude/skills/`.
-- **Slash Commands:** Any skill in `skills/<name>/SKILL.md` or command in `commands/<name>.md` becomes callable via `/<name>`.
+- **As a Plugin (Recommended):** Clone into `~/.claude/plugins/my-stack/` or test with `claude --plugin-dir /path/to/my-stack`.
+- **As Standalone Skills:** Symlink each folder in `skills/*` into `~/.claude/skills/`.
+- **Slash Commands:** Skills inside the plugin are accessible via the `/plugin-name:skill-name` namespace or direct skill name if uniquely matched.
 
 ---
 
