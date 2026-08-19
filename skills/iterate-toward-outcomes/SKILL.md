@@ -24,6 +24,8 @@ Keep transient state in the task context when persistence across sessions is unn
 
 ## Run one work loop
 
+**Important for agents in the Antigravity harness:** Be aware that the over-use of Antigravity's planning system can easily collapse all iteration into a single plan that destroys valuable back-and-forth feedback rounds with your user.
+
 1. Reorient from the outcome, current goal invariants, active evaluation regime when present, unresolved prediction errors, and repository reality.
 2. Choose one useful work unit that advances the artifact, tests an important assumption, or reduces uncertainty blocking useful progress. Price uncertainty-reducing work by the total cost of obtaining decisive evidence, not merely the cost of changing code.
 3. When an evaluation regime is active, hold it fixed while the chosen candidate is changed and judged. Do not edit the artifact and the decision rule inside one comparison.
