@@ -5,7 +5,7 @@ description: Use when plausible answers would change the next decision and autom
 
 # Resolve Ambiguity With Human Evidence
 
-**Important:** read [skill-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
+**Important:** read [stack-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
 
 Use human attention only to answer a decision-relevant question. Optimize the entire path from ambiguity to observation, then retain the lesson rather than the experimental artifact.
 

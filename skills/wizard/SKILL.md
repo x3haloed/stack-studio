@@ -5,7 +5,7 @@ description: Generate an interactive bash wizard that walks a human through step
 
 # Wizard
 
-**Important:** read [skill-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
+**Important:** read [stack-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
 
 A **wizard** is a bash script that walks a human, step by step, through a manual procedure that's tedious to do by hand and tedious to re-explain to an AI every time. It opens each URL, says exactly what to click and copy, captures the values, writes them where they belong (`.env`, GitHub secrets), confirms at every stage, and shows how many stages are left. It might configure third-party services, run a one-off migration, or move the project from one state to another.
 

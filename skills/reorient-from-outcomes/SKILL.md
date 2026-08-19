@@ -5,7 +5,7 @@ description: Use after several locally connected changes, at a natural milestone
 
 # Reorient From Outcomes
 
-**Important:** read [skill-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
+**Important:** read [stack-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
 
 Temporarily set aside the current plan and architectural direction.
 

@@ -5,7 +5,7 @@ description: Advance a large, uncertain, or long-running software goal through r
 
 # Iterate Toward Outcomes
 
-**Important:** read [skill-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
+**Important:** read [stack-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
 
 Work persistently toward the stated outcome. Treat architecture and plans as revisable hypotheses, not as the target.
 

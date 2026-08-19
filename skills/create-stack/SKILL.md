@@ -5,7 +5,7 @@ description: Use to create or modify a "*-stack" bundle of related skill files l
 
 # Stack Studio
 
-**Important:** read [skill-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
+**Important:** read [stack-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
 
 Stack Studio is a suite of skills to help you design... skill suites. Popular examples include:
 - [gstack](https://github.com/garrytan/gstack)
@@ -34,4 +34,3 @@ Deliver a folder or repo of related skills that can be easily installed into a c
   | Deterministic / mechanical | System | **Yes** |
   | Requires judgment | Agent or human user | **No** |
   | Requires accountable human authority | Human | **No** |
-  

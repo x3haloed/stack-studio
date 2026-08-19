@@ -5,7 +5,7 @@ description: Use after live behavior, user feedback, performance evidence, integ
 
 # Discover Goal Invariants
 
-**Important:** read [skill-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
+**Important:** read [stack-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
 
 Determine whether the evidence refines what success means rather than merely how the current implementation works.
 

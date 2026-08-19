@@ -5,7 +5,7 @@ description: Use when auditing, validating, packaging, or publishing a stack/plu
 
 # Audit and Publish
 
-**Important:** read [skill-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
+**Important:** read [stack-studio-init](../stack-studio-init/SKILL.md) if you haven't yet to ensure you've got all the context you need about stack-studio skills. This is a one-time operation.
 
 This skill guides you through auditing a stack repository for structural integrity, validating skill frontmatter, checking script execution permissions, and preparing the repository to be installed cleanly as a plugin across major agentic harnesses.
 
