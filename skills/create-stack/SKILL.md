@@ -21,11 +21,11 @@ Deliver a folder or repo of related skills that can be easily installed into a c
 1. Clarify the target repo/dir. Where is the work product located? Is this a brand new endeavor, or is there existing work somewhere?
 2. Work iteratively. Don't expect to achieve the final result in a single turn or pass.
 3. Continually clarify and reorient on the user's goal. What do they want the stack to do? What should the experience be like for the user?
-4. Don't forget to perform review passes after long stretches of work to ensure the product repo is clean and free of errors.
+4. Don't forget to perform review passes after long stretches of work. Invoke [audit-and-publish](../audit-and-publish/SKILL.md) to audit structural correctness, script permissions, and multi-platform plugin packaging.
 
 ## Tips for Success
 
-1. Unless excessively frictionful in the environment or directed otherwise by the user, aim for broad compatibility with the most popular coding and agentic harnesses' "plugin" systems. This allows the stack to be easily installed and removed as a group of related skills. Ref: https://developers.openai.com/plugins/build/plugins
+1. Aim for broad compatibility across the top coding and agentic harnesses (Claude Code, Cursor, Antigravity, OpenAI Codex, and GitHub Copilot). Use [audit-and-publish](../audit-and-publish/SKILL.md) to verify that the stack conforms to the universal plugin layout and manifest requirements.
 2. Routing vs. context tension: breaking workflows into individual skills can help steer the consuming agent into regimes at appropriate times. This helps guard against smoothing risks -- when a complex workflow is reduced to "yeah, I get the idea" by an agent. On the other hand, when installed into a harness, all skill frontmatter is loaded into context, which is its own cost. Carefully balance the risks and benefits.
 3. Determinism vs. probabilism: favor pushing all deterministic logic into executable scripts while keeping judgement and selection in the hands of the user and the agent. Scripting determinstic flows will improve reliability and predictability while lowering token costs for the user and context window bloat for the agent. The following table summarizes the tradeoffs: 
 
