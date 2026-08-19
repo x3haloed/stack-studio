@@ -471,85 +471,7 @@ This is optional, requires subagents, and most users won't need it. The human re
 
 The description field in SKILL.md frontmatter is the primary mechanism that determines whether an agent invokes a skill. After creating or improving a skill, offer to optimize the description for better triggering accuracy.
 
-The local scripts use adapters for model-specific behavior:
-
-- **Default for Codex:** `--trigger-adapter codex-exec` and `--improver-adapter codex`. These call `codex exec` with a temporary project and schema-constrained JSON output where supported.
-- **Optional Anthropic compatibility:** `--trigger-adapter claude-code` and `--improver-adapter anthropic`. Use these only when the environment has the relevant Claude CLI or Anthropic SDK credentials and the user explicitly wants that path.
-- **Headless/Codex-friendly reports:** pass `--no-open` to `scripts/run_loop.py` to write reports without opening a browser. Use `--report none` to disable reports entirely.
-
-### Step 1: Generate trigger eval queries
-
-Create 20 eval queries — a mix of should-trigger and should-not-trigger. Save as JSON:
-
-```json
-[
-  {"query": "the user prompt", "should_trigger": true},
-  {"query": "another prompt", "should_trigger": false}
-]
-```
-
-The queries must be realistic things an actual user would type. Not abstract requests, but requests that are concrete and specific and have a good amount of detail. For instance, file paths, personal context about the user's job or situation, column names and values, company names, URLs. A little bit of backstory. Some might be in lowercase or contain abbreviations or typos or casual speech. Use a mix of different lengths, and focus on edge cases rather than making them clear-cut (the user will get a chance to sign off on them).
-
-Bad: `"Format this data"`, `"Extract text from PDF"`, `"Create a chart"`
-
-Good: `"ok so my boss just sent me this xlsx file (its in my downloads, called something like 'Q4 sales final FINAL v2.xlsx') and she wants me to add a column that shows the profit margin as a percentage. The revenue is in column C and costs are in column D i think"`
-
-For the **should-trigger** queries (8-10), think about coverage. You want different phrasings of the same intent — some formal, some casual. Include cases where the user doesn't explicitly name the skill or file type but clearly needs it. Throw in some uncommon use cases and cases where this skill competes with another but should win.
-
-For the **should-not-trigger** queries (8-10), the most valuable ones are the near-misses — queries that share keywords or concepts with the skill but actually need something different. Think adjacent domains, ambiguous phrasing where a naive keyword match would trigger but shouldn't, and cases where the query touches on something the skill does but in a context where another tool is more appropriate.
-
-The key thing to avoid: don't make should-not-trigger queries obviously irrelevant. "Write a fibonacci function" as a negative test for a PDF skill is too easy — it doesn't test anything. The negative cases should be genuinely tricky.
-
-### Step 2: Review with user
-
-Present the eval set to the user for review using the HTML template:
-
-1. Read the template from `assets/eval_review.html`
-2. Replace the placeholders:
-   - `__EVAL_DATA_PLACEHOLDER__` → the JSON array of eval items (no quotes around it — it's a JS variable assignment)
-   - `__SKILL_NAME_PLACEHOLDER__` → the skill's name
-   - `__SKILL_DESCRIPTION_PLACEHOLDER__` → the skill's current description
-3. Write to a temp file (e.g., `/tmp/eval_review_<skill-name>.html`) and give the user the path. Open it only if the current harness supports browser or file-opening tools.
-4. The user can edit queries, toggle should-trigger, add/remove entries, then click "Export Eval Set"
-5. The exported file is `eval_set.json`; ask the user where it landed or check the likely download directory only when the harness has filesystem access there.
-
-This step matters — bad eval queries lead to bad descriptions.
-
-### Step 3: Run the optimization loop
-
-Tell the user: "This will take some time — I'll run the optimization loop in the background and check on it periodically."
-
-Save the eval set to the workspace, then run in the background:
-
-```bash
-python <path-to-writing-skills>/scripts/run_loop.py \
-  --eval-set <path-to-trigger-eval.json> \
-  --skill-path <path-to-skill> \
-  --trigger-adapter codex-exec \
-  --improver-adapter codex \
-  --model <model-id-powering-this-session> \
-  --max-iterations 5 \
-  --no-open \
-  --verbose
-```
-
-Use the model ID from your system prompt (the one powering the current session) so the triggering test matches what the user actually experiences.
-
-While it runs, periodically tail the output to give the user updates on which iteration it's on and what the scores look like.
-
-This handles the full optimization loop automatically. It splits the eval set into 60% train and 40% held-out test, evaluates the current description (running each query 3 times to get a reliable trigger rate), then calls the selected improver adapter to propose improvements based on what failed. It re-evaluates each new description on both train and test, iterating up to 5 times. When reports are enabled, it writes an HTML report showing the results per iteration and returns JSON with `best_description` — selected by test score rather than train score to avoid overfitting.
-
-### How skill triggering works
-
-Understanding the triggering mechanism helps design better eval queries. Skills appear to the agent with their name and description, and the agent decides whether to consult a skill based on that metadata. The important thing to know is that agents may skip skills for tasks they can easily handle on their own — simple, one-step queries like "read this PDF" may not trigger a skill even if the description matches perfectly, because basic tools are enough. Complex, multi-step, or specialized queries more reliably trigger skills when the description matches.
-
-This means your eval queries should be substantive enough that an agent would actually benefit from consulting a skill. Simple queries like "read file X" are poor test cases — they may not trigger skills regardless of description quality.
-
-### Step 4: Apply the result
-
-Take `best_description` from the JSON output and update the skill's SKILL.md frontmatter. Show the user before/after and report the scores.
-
----
+See [references/description-optimization.md](references/description-optimization.md) for the complete 4-step optimization loop (`scripts/run_loop.py`), adapter configurations, and headless report options.
 
 ### Package the skill
 
@@ -563,74 +485,14 @@ After packaging, direct the user to the resulting `.skill` file path so they can
 
 ---
 
-## Environment Adaptation
-
-Use the strongest evaluation method the current harness reliably supports.
-
-**Codex or any environment with the Codex CLI:** Use the default adapters:
-
-```bash
-python <path-to-writing-skills>/scripts/run_eval.py \
-  --eval-set <path-to-trigger-eval.json> \
-  --skill-path <path-to-skill> \
-  --adapter codex-exec
-
-python <path-to-writing-skills>/scripts/improve_description.py \
-  --eval-results <path-to-results.json> \
-  --skill-path <path-to-skill> \
-  --adapter codex
-```
-
-`scripts/run_loop.py` combines both with `--trigger-adapter codex-exec --improver-adapter codex`.
-
-**Anthropic-compatible environments:** Use `claude-code` for trigger evals and `anthropic` for description improvement only when those dependencies are actually available and the user wants to exercise that stack:
-
-```bash
-python <path-to-writing-skills>/scripts/run_loop.py \
-  --eval-set <path-to-trigger-eval.json> \
-  --skill-path <path-to-skill> \
-  --trigger-adapter claude-code \
-  --improver-adapter anthropic
-```
-
-**No subagents:** Run test prompts yourself one at a time, using the draft skill as instructions. This is less rigorous than independent runs because you have author context, but it is still useful when paired with human review. Skip baseline comparisons if they would be artificial.
-
-**No browser or display:** Prefer `scripts/generate_review.py --static <output_path>` for a standalone review file, or `--no-open` for server mode without browser launch. If neither is practical, present results directly in the conversation with the prompt, output paths, and a direct request for feedback.
-
-**No quantitative assertions:** Do not force benchmarks onto subjective skills. Use qualitative review, blind comparison when available, and targeted follow-up prompts.
-
-**Packaging:** `scripts/package_skill.py` works anywhere with Python and a filesystem:
-
-```bash
-python <path-to-writing-skills>/scripts/package_skill.py <path-to-skill-folder>
-```
-
----
-
 ## Reference files
 
-The `references/agents/` directory contains instructions for specialized subagents. Read them when you need to spawn the relevant subagent.
-
+The `references/agents/` directory contains instructions for specialized subagents:
 - `references/agents/grader.md` — How to evaluate assertions against outputs
 - `references/agents/comparator.md` — How to do blind A/B comparison between two outputs
 - `references/agents/analyzer.md` — How to analyze why one version beat another
 
-The references/ directory has additional documentation:
+Additional documentation:
 - `references/schemas.md` — JSON structures for evals.json, grading.json, etc.
+- `references/description-optimization.md` — Complete 4-step description optimization loop and environment adapters.
 
----
-
-Repeating one more time the core loop here for emphasis:
-
-- Figure out what the skill is about
-- Draft or edit the skill
-- Choose a validation level
-- Run agent-with-skill checks, plus baseline-agent comparisons when the change warrants it
-- Put the outputs in front of the user:
-  - For substantive multi-run evals, create `benchmark.json` and run `scripts/generate_review.py`
-  - For small edits or constrained environments, present the relevant outputs directly
-- Use quantitative assertions when the outputs are objectively checkable
-- Improve and repeat until you and the user are satisfied
-- Package the final skill and return it to the user.
-
-Please add steps to your TodoList, if you have such a thing, to make sure you don't forget. For substantive eval rounds, include "Create evals JSON and run `scripts/generate_review.py` so the human can review test cases."

@@ -1,0 +1,9 @@
+{
+  "name": "stack-studio",
+  "version": "1.0.0",
+  "description": "A meta-suite of skills and tooling to design, iterate, audit, and publish skill stacks as plugins in Cursor.",
+  "author": {
+    "name": "Stack Studio Contributors"
+  },
+  "skills": "./skills/"
+}
