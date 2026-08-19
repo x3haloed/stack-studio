@@ -183,6 +183,21 @@ class StackAuditor:
                         data = json.loads(path.read_text(encoding="utf-8"))
                         self.manifests_found[label] = data
                         self.info.append(f"Found valid manifest: {label}")
+
+                        # Validate declared component paths in JSON manifests
+                        if isinstance(data, dict):
+                            for key in ("skills", "commands", "rules", "mcp", "hooks", "agents"):
+                                if key in data and isinstance(data[key], str):
+                                    target_rel = data[key].strip()
+                                    target_path = (self.root / target_rel).resolve()
+                                    if not target_path.exists():
+                                        self.errors.append(
+                                            f"[{label}] Declared '{key}' path '{target_rel}' does not exist on disk."
+                                        )
+                                    elif key == "commands" and "skills" in data and data["commands"] == data["skills"]:
+                                        self.warnings.append(
+                                            f"[{label}] 'commands' points to the same directory as 'skills' ('{target_rel}'). Skills and slash commands should use separate directories to avoid command collisions."
+                                        )
                     except Exception as e:
                         self.errors.append(f"Invalid JSON in {label}: {e}")
                 else:

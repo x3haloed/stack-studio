@@ -48,12 +48,14 @@ Place this `plugin.json` at the root of the repository:
     "name": "Author Name"
   },
   "skills": "./skills/",
-  "rules": "./rules/",
-  "commands": "./commands/",
-  "mcp": "./mcp.json",
-  "hooks": "./hooks.json"
+  "rules": "./rules/",        // Optional: omit if no rules/ directory
+  "commands": "./commands/",  // Optional: omit if no commands/ directory (never point to ./skills/)
+  "mcp": "./mcp.json",        // Optional: omit if no MCP servers
+  "hooks": "./hooks.json"     // Optional: omit if no lifecycle hooks
 }
 ```
+
+> **Important Manifest Rule:** Only declare component paths (`rules`, `commands`, `mcp`, `hooks`) if the target files/directories actually exist. Never point `"commands"` to `"./skills/"` as skill packages and slash-command markdown files have different execution semantics.
 
 ---
 

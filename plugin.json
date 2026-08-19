@@ -1,11 +1,9 @@
 {
   "name": "stack-studio",
   "version": "1.0.0",
-  "description": "A meta-suite of skills, templates, and auditing tooling to design, iterate, audit, and publish skill stacks as plugins across major agentic harnesses.",
+  "description": "A meta-suite of skills, templates, and auditing tooling to design, iterate, audit, and publish skill stacks as plugins across AI coding harnesses.",
   "author": {
     "name": "Stack Studio Contributors"
   },
-  "skills": "./skills/",
-  "commands": "./skills/",
-  "rules": "./rules/"
+  "skills": "./skills/"
 }
