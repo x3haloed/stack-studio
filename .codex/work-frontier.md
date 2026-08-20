@@ -89,28 +89,16 @@ improve Stack Studio itself.
 
 ## Prediction errors
 
-### Stack-level progress has split ownership
+### Stack evaluation is specified but not operationalized
 
-- **Expected:** `create-stack` would carry an agent through the authoritative
-  end-to-end stack-building loop.
-- **Observed:** A fresh agent treated `create-stack` as the domain umbrella but
-  independently selected `iterate-toward-outcomes` as the authority for
-  continued progress; no explicit handoff connects them.
-- **Uncertain:** Which concepts and transitions should be absorbed by the
-  surviving stack-level authority, and which still benefit from separate skill
-  routing.
-- **Evidence:** `.codex/current-agent-journey.md`, sections 2 and 4.
-
-### Stack coherence has no evaluation authority
-
-- **Expected:** Stack Studio would determine whether the assembled skills work
-  together to orient an agent and accomplish the stack-level outcome.
-- **Observed:** `writing-skills` evaluates individual skills and
-  `audit-and-publish` checks structural packaging, but neither owns cross-skill
-  routing, interaction, coverage, or end-to-end outcome evaluation.
-- **Uncertain:** Whether stack-level evaluation belongs inside the primary loop
-  or warrants a specialized supporting skill and toolchain.
-- **Evidence:** `.codex/current-agent-journey.md`, sections 3 and 4.
+- **Expected:** The fixed stack scenarios would provide a repeatable evidence
+  path for comparing the current repository with a candidate reorganization.
+- **Observed:** `create-stack` now owns stack-level evaluation and a fresh agent
+  followed the intended path, but the scenario was launched, captured, and
+  scored manually with no standard runner or persisted result schema.
+- **Uncertain:** What minimum tooling makes stack-level evaluations repeatable
+  without imposing the individual-skill benchmark system's full ceremony.
+- **Evidence:** `.codex/revised-self-hosting-probe.md`.
 
 ### Publication stops at preparation
 

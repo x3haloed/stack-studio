@@ -1,5 +1,9 @@
 # Current Agent Journey
 
+> Historical baseline: this probe predates the first authority collapse. It
+> records the former topology for comparison and is not current operating
+> guidance.
+
 ## Probe
 
 A fresh agent with no prior design discussion received only this request and
@@ -104,4 +108,3 @@ Material boundaries are:
 The repository exposes most of the relevant capabilities, and a diligent agent
 can infer a plausible workflow. The complete stack-building loop is nevertheless
 an emergent interpretation rather than an explicitly owned and connected path.
-

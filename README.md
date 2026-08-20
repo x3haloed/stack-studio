@@ -16,11 +16,10 @@ Stack Studio is a meta-suite of skills, reference blueprints, and verification t
 
 | Skill | Description | Entry Point |
 | :--- | :--- | :--- |
-| **`create-stack`** | Design or modify a "*-stack" bundle of related skills. | [`skills/create-stack/SKILL.md`](skills/create-stack/SKILL.md) |
+| **`create-stack`** | Own the end-to-end design, implementation, evaluation, and release-readiness loop for a coherent "*-stack". | [`skills/create-stack/SKILL.md`](skills/create-stack/SKILL.md) |
 | **`audit-and-publish`** | Audit frontmatter, script permissions, and plugin manifests for multi-harness compatibility. | [`skills/audit-and-publish/SKILL.md`](skills/audit-and-publish/SKILL.md) |
 | **`writing-skills`** | TDD-driven skill creation, evaluation benchmarks, and progressive disclosure design. | [`skills/writing-skills/SKILL.md`](skills/writing-skills/SKILL.md) |
 | **`wizard`** | Scope and generate interactive bash wizards for manual human-gated steps. | [`skills/wizard/SKILL.md`](skills/wizard/SKILL.md) |
-| **`iterate-toward-outcomes`** | Manage long-running, outcome-anchored iterations without premature architectural lock-in. | [`skills/iterate-toward-outcomes/SKILL.md`](skills/iterate-toward-outcomes/SKILL.md) |
 | **`stack-studio-init`** | Environment initializer to pull skills into context. | [`skills/stack-studio-init/SKILL.md`](skills/stack-studio-init/SKILL.md) |
 
 ---
