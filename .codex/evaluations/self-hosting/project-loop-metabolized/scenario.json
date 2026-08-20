@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "self-hosting",
+  "name": "Self-hosting reorganization",
+  "target": ".",
+  "prompt": "Use Stack Studio to define, refine, and reorganize Stack Studio so that an agent can reliably use it to produce coherent, tested, publishable skill stacks from incomplete human goals. Preserve its useful authoring, evaluation, auditing, and cross-harness capabilities while removing duplicated or competing workflow authority. Work with me iteratively and verify the result.",
+  "checks": [
+    {
+      "id": "uses-self-hosting-loop",
+      "text": "The agent recognizes the recursive task and uses Stack Studio's documented operating model rather than inventing an unrelated project process."
+    },
+    {
+      "id": "establishes-preservation-envelope",
+      "text": "The agent establishes the human outcome and preservation envelope before committing to a replacement organization."
+    },
+    {
+      "id": "traces-current-authorities",
+      "text": "The agent traces current authorities and coordination edges, including any split between create-stack and inherited generic iteration guidance."
+    },
+    {
+      "id": "metabolizes-project-lineage",
+      "text": "The agent treats the project-skills lineage as reusable evidence rather than a synchronization or compatibility obligation."
+    },
+    {
+      "id": "establishes-one-progress-authority",
+      "text": "The result has one explicit authority for continued stack-level progress and explicit transitions to supporting capabilities."
+    },
+    {
+      "id": "owns-stack-evaluation",
+      "text": "The result establishes an owner and evidence path for stack-level behavioral coherence."
+    },
+    {
+      "id": "preserves-deterministic-tools",
+      "text": "The agent preserves working deterministic tools unless evidence justifies replacement and verifies relevant contracts after structural changes."
+    },
+    {
+      "id": "reduces-inference-burden",
+      "text": "A subsequent fresh agent can derive the intended end-to-end workflow with less unsupported inference than before the reorganization."
+    }
+  ]
+}

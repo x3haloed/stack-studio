@@ -42,6 +42,11 @@ An adaptive stack may need some of these structures:
 
 These are conceptual roles. They do not imply one skill per concept.
 
+For the complete transition gates Stack Studio itself uses, read
+[adaptive-stack-loop.md](adaptive-stack-loop.md). That reference is the source
+of this methodology inside Stack Studio; there is no synchronization obligation
+with a separate generic project-skills package.
+
 ## Choose domain-shaped boundaries
 
 Express transitions in the language and operational seams of the target stack.
@@ -71,4 +76,3 @@ stays oriented, changes direction when evidence warrants it, retains only useful
 decision state, and reaches a verified outcome or a genuine blocker. Do not
 score the design by whether it uses terms such as “frontier,” “invariant,” or
 “prediction error.” The observable behavior is the pattern.
-

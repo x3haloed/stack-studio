@@ -1,5 +1,8 @@
 # Revised Self-Hosting Probe
 
+> Historical evidence from the authority-collapse checkpoint. Skill names and
+> topology below describe that candidate, not the current repository.
+
 ## Conditions
 
 A fresh agent with no prior Stack Studio discussion received the self-hosting

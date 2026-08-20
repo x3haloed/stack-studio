@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "scenario_id": "self-hosting",
+  "baseline": "authority-collapse",
+  "candidate": "project-loop-metabolized",
+  "baseline_counts": {
+    "not_exercised": 1,
+    "fail": 0,
+    "pass": 7
+  },
+  "candidate_counts": {
+    "not_exercised": 0,
+    "fail": 0,
+    "pass": 8
+  },
+  "improvements": [
+    "preserves-deterministic-tools"
+  ],
+  "regressions": [],
+  "transitions": [
+    {
+      "id": "uses-self-hosting-loop",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "establishes-preservation-envelope",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "traces-current-authorities",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "metabolizes-project-lineage",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "establishes-one-progress-authority",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "owns-stack-evaluation",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "preserves-deterministic-tools",
+      "before": "not_exercised",
+      "after": "pass"
+    },
+    {
+      "id": "reduces-inference-burden",
+      "before": "pass",
+      "after": "pass"
+    }
+  ]
+}

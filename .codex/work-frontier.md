@@ -89,16 +89,3 @@ improve Stack Studio itself.
   evidence is stored under `.codex/evaluations/self-hosting/`.
 
 ## Prediction errors
-
-### Resolved: publication stops at preparation
-
-- **Expected:** `audit-and-publish` would carry a completed stack through the
-  publication outcome named by the skill.
-- **Observed:** The skill audits and prepares repositories but specifies no
-  versioning, tagging, release, registry, marketplace, or publication
-  transaction.
-- **Resolution:** Renamed the capability to `audit-release-readiness`; its
-  authority ends at an evidence-backed handoff. Destination-specific publishing
-  remains a separately authorized external transaction.
-- **Evidence:** `skills/audit-release-readiness/SKILL.md` and the deterministic
-  auditor's support-evidence report.

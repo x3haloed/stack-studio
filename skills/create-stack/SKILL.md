@@ -69,9 +69,10 @@ skill topology that reliably supports those journeys:
   consuming harness.
 
 When the target stack must guide long-running adaptive work, read
-[iterative-stack-patterns.md](references/iterative-stack-patterns.md). Adapt the
-pattern to the target domain instead of mechanically reproducing generic project
-skills.
+[iterative-stack-patterns.md](references/iterative-stack-patterns.md) and, when
+implementing or using the transitions themselves,
+[adaptive-stack-loop.md](references/adaptive-stack-loop.md). Adapt the pattern
+to the target domain instead of mechanically reproducing generic project skills.
 
 ## Run the stack-building loop
 
@@ -96,31 +97,24 @@ Plans may coordinate the immediate work, but replace them when evidence changes
 the best direction. Completion means satisfying the outcome, not finishing the
 initial task list.
 
-## Route exceptional conditions
+## Handle adaptive transitions inside the loop
 
-These skills are transition handlers inside this loop, not parallel project
-workflows or mandatory phases:
+Read the relevant section of
+[adaptive-stack-loop.md](references/adaptive-stack-loop.md) when:
 
-- Use [resolve-prediction-errors](../resolve-prediction-errors/SKILL.md) when a
-  consequential observation contradicts the working model.
-- Use [resolve-ambiguity-with-human-evidence](../resolve-ambiguity-with-human-evidence/SKILL.md)
-  when plausible answers would change the next decision and only bounded human
-  experience or judgment can distinguish them.
-- Use [discover-goal-invariants](../discover-goal-invariants/SKILL.md) when
-  evidence may reveal a previously implicit property of success.
-- Use [reorient-from-outcomes](../reorient-from-outcomes/SKILL.md) at a milestone
-  or when momentum, accumulated uncertainty, or a substantial next chunk makes
-  drift plausible.
-- Use [compact-work-frontier](../compact-work-frontier/SKILL.md) when persistent
-  decision state becomes stale, repetitive, or expensive to reread.
-- Use [evolve-evaluation-regime](../evolve-evaluation-regime/SKILL.md) only at an
-  evaluation boundary when the active criterion is evidenced as saturated,
-  gameable, miscalibrated, or blind to a relevant success dimension.
-- Use [wizard](../wizard/SKILL.md) when the produced stack needs a durable,
-  human-operated procedure for steps the agent cannot perform itself.
+- a consequential observation contradicts the working model;
+- only bounded human experience can resolve a decision-changing ambiguity;
+- evidence reveals a previously implicit property of success;
+- a milestone, accumulated uncertainty, or implementation momentum makes drift
+  plausible;
+- persistent decision state becomes stale or expensive to reread; or
+- the evaluation criterion is evidenced as saturated, gameable,
+  miscalibrated, or blind to a relevant success dimension.
 
-Continue the ordinary stack-building loop when none of these conditions is
-present.
+These are state transitions owned by `create-stack`, not peer skills or
+mandatory phases. Continue the ordinary loop when no transition is warranted.
+Use [wizard](../wizard/SKILL.md) only when the produced stack needs a durable,
+human-operated procedure for steps the agent cannot perform itself.
 
 ## Evaluate assembled behavior
 

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "scenario_id": "self-hosting",
+  "candidate": "project-loop-metabolized",
+  "created_at": "2026-08-20T18:10:52.582103+00:00",
+  "raw_output": "raw-output.md",
+  "assessment": "assessment.json"
+}

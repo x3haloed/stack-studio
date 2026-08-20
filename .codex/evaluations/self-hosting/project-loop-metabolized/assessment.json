@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "scenario_id": "self-hosting",
+  "candidate": "project-loop-metabolized",
+  "checks": [
+    {
+      "id": "uses-self-hosting-loop",
+      "status": "pass",
+      "evidence": "The fresh agent began from the repository's persisted outcome and current self-hosting candidate, then derived its work and stopping condition from create-stack rather than inventing a parallel process."
+    },
+    {
+      "id": "establishes-preservation-envelope",
+      "status": "pass",
+      "evidence": "The report enumerated the eight frontier invariants as the preservation envelope before judging the consolidation."
+    },
+    {
+      "id": "traces-current-authorities",
+      "status": "pass",
+      "evidence": "The report contrasted the historical create-stack/iterate-toward-outcomes split with the current controller, target-repository authority, frontier state, supporting skills, and external publication boundary."
+    },
+    {
+      "id": "metabolizes-project-lineage",
+      "status": "pass",
+      "evidence": "The report explicitly found no synchronization obligation with project-skills and treated its ideas as intentionally adapted evidence governed by Stack Studio's own outcome and evaluations."
+    },
+    {
+      "id": "establishes-one-progress-authority",
+      "status": "pass",
+      "evidence": "The report identified create-stack as the sole owner of continued end-to-end progress and routed conditional transitions through its adaptive-stack-loop reference."
+    },
+    {
+      "id": "owns-stack-evaluation",
+      "status": "pass",
+      "evidence": "The report found explicit assembled-stack evaluation ownership in create-stack and traced the scenario, raw-output, assessment, finalization, and comparison evidence path."
+    },
+    {
+      "id": "preserves-deterministic-tools",
+      "status": "pass",
+      "evidence": "The fresh agent identified all three deterministic tool families and independently ran both test suites, with four tests passing in each."
+    },
+    {
+      "id": "reduces-inference-burden",
+      "status": "pass",
+      "evidence": "The fresh agent derived one controller and direct transitions from the current files without reconstructing the retired six-skill control subsystem; it characterized the consolidation as reducing trigger surfaces and authority reconciliation."
+    }
+  ],
+  "notes": "The candidate preserves all fixed checks. The separately deferred Windows shim remains a release-readiness error, not a regression in the project-loop topology."
+}
