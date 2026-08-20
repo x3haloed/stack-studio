@@ -64,6 +64,15 @@ improve Stack Studio itself.
   principle and supports reliable stack production without displacing human
   authority.
 
+- **Purpose-complete temporary resources are released after durable evidence is
+  preserved.** Produced stacks should make the purpose, release condition, and
+  retention disposition of costly temporary resources explicit rather than
+  retaining them by inertia.
+  **Evidence:** The vm-stack Windows field trial left two completed validation
+  clones consuming substantial disk until the user identified that their
+  purpose had been satisfied. Purpose-bound release reclaimed the disposable
+  disks while retaining the single reusable base.
+
 - **Produced stacks make calibrated portability claims.** Stack Studio must
   separate shared skill structure, harness-specific packaging, observed
   discovery, observed behavior, and completed publication so an agent never
@@ -73,19 +82,52 @@ improve Stack Studio itself.
 
 ## Evaluation regime
 
-- **Epoch:** `epoch-0-current-orientation-baseline`
+- **Epoch:** `epoch-1-purpose-bound-resource-lifecycle`
 - **Active criterion:** Give a fresh agent only Stack Studio, a target repository,
   and one of the three prompts in `evaluation-scenarios.json`. Observe whether the
   agent derives and follows a complete stack-building loop without relying on
   prior knowledge of Stack Studio. Judge the journey against the predeclared
-  scenario checks; do not change those checks while comparing a candidate
-  reorganization with the current repository.
+  scenario checks. For the existing-vm-stack scenario, also observe whether the
+  agent gives costly temporary resources a disposition and releases disposable
+  resources after preserving evidence. Hold this check set fixed for all
+  epoch-1 candidate comparisons.
 - **Anchors:** The outcome and goal invariants above; the user's authority over
   consequential intent; repository evidence; preservation of working authoring,
   validation, and cross-harness packaging capabilities; and the raw transcripts
   produced by fresh-agent runs.
 - **Dependent evidence:** Any pass/fail judgment, comparison, or conclusion
-  derived from the three scenarios under this epoch. Current self-hosting
-  evidence is stored under `.codex/evaluations/self-hosting/`.
+  derived from the three scenarios under this epoch. Epoch-0 self-hosting
+  evidence remains historical and is not rescored under the new check. Current
+  self-hosting evidence is stored under `.codex/evaluations/self-hosting/`.
+
+- **Promotion evidence:** The vm-stack Windows field trial independently showed
+  that the prior criterion was blind to purpose-complete resource retention.
+  The field evidence is stored under
+  `.codex/evaluations/field-trials/vm-stack-windows/`.
 
 ## Prediction errors
+
+### Completion guidance did not cause resource release
+
+- **Expected:** An agent following Stack Studio would carry an operational stack
+  journey through a complete, evidence-backed stopping condition.
+- **Observed:** Behavioral validation completed, but two costly disposable VMs
+  remained until the user identified that they had served their purpose.
+- **Uncertain:** Whether explicit controller guidance and a fixed scenario check
+  are sufficient for a fresh agent to preserve evidence and release temporary
+  resources without a user reminder.
+- **Evidence:** `.codex/evaluations/field-trials/vm-stack-windows/observation.md`
+
+### Unclassified script probing launched human-facing UI
+
+- **Expected:** A fresh agent would inspect the existing stack and obtain
+  proportionate runtime evidence without invoking interactive wizards in a
+  noninteractive correctness probe.
+- **Observed:** The epoch-1 fresh agent ran a bulk `--help` sweep across shell
+  scripts. Wrapper entry points delegated into an interactive sanity checker
+  and opened several visible Terminal windows that the user had to close.
+- **Uncertain:** Whether controller guidance to classify unfamiliar tools before
+  execution is sufficient, or whether produced stacks also need deterministic
+  enforcement that conventional inspection flags are side-effect free.
+- **Evidence:**
+  `.codex/evaluations/existing-vm-stack/purpose-bound-resource-lifecycle/summary.md`

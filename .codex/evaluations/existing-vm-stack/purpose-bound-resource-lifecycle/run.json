@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "scenario_id": "existing-vm-stack",
+  "candidate": "purpose-bound-resource-lifecycle",
+  "created_at": "2026-08-20T22:16:16.313404+00:00",
+  "raw_output": "raw-output.md",
+  "assessment": "assessment.json"
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "vm-stack-windows",
+  "classification": "field_trial_non_comparable",
+  "target": "user-supplied vm-stack repository",
+  "observed_outcomes": [
+    "preserved one VM-management authority",
+    "used live Windows evidence to revise implementation repeatedly",
+    "validated unattended installation and reusable thin clones",
+    "learned purpose-bound disposal as a target invariant",
+    "released completed disposable clones after preserving evidence"
+  ],
+  "not_claimed": [
+    "fresh-agent independence",
+    "packaged-plugin discovery",
+    "cross-harness behavioral verification"
+  ],
+  "observation": "observation.md"
+}

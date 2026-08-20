@@ -26,6 +26,9 @@ Clarify the smallest set of consequential uncertainties needed to begin:
 - What lived experience or operational properties are part of success?
 - Which environments, harnesses, integrations, or existing contracts matter?
 - What evidence would let the user trust that the complete stack works?
+- Which temporary environments, fixtures, branches, accounts, generated assets,
+  or other costly resources may be created, and what observation will end their
+  useful life?
 
 Do not require the user to understand Stack Studio's skill catalog or prescribe
 the development process. Ask for human judgment when it determines the desired
@@ -67,6 +70,9 @@ skill topology that reliably supports those journeys:
   into outputs.
 - Account for the metadata and context cost of every skill exposed to the
   consuming harness.
+- Give costly temporary resources an explicit purpose, observable release
+  condition, and retention disposition. Default produced resources to
+  disposable unless a long-lived use or unresolved decision requires them.
 
 When the target stack must guide long-running adaptive work, read
 [iterative-stack-patterns.md](references/iterative-stack-patterns.md) and, when
@@ -88,9 +94,18 @@ Repeat one useful work unit at a time:
 5. Observe the strongest practical evidence: executed scripts, target-harness
    behavior, realistic agent journeys, tests, generated artifacts, or direct
    user experience.
+   Before executing an unfamiliar tool, classify it from owned documentation or
+   source as read-only, interactive, mutating, or externally consequential.
+   Never substitute a bulk `--help`, smoke, or execution sweep across
+   unclassified scripts for targeted contract inspection; wrappers and legacy
+   entry points may launch UI or perform setup even when passed conventional
+   help flags.
 6. Evaluate what the skills do together, not only whether each skill works in
    isolation.
-7. Incorporate only decision-relevant learning into the frontier, then choose
+7. After preserving required evidence outside temporary resources, release
+   those whose purpose is satisfied in the same work loop. Do not retain them
+   merely because they might be useful later.
+8. Incorporate only decision-relevant learning into the frontier, then choose
    the next work unit.
 
 Plans may coordinate the immediate work, but replace them when evidence changes
@@ -131,6 +146,8 @@ harness would provide. Observe:
 - whether shared artifacts and state retain consistent meaning;
 - whether deterministic tools produce verifiable results;
 - whether the agent requests human input only where judgment is necessary; and
+- whether costly temporary resources are retained only while they still serve
+  an explicit purpose or unresolved verification need; and
 - whether the final result satisfies the stack-level outcome and invariants.
 
 Preserve raw transcripts and artifacts separately from scores or reviewer
@@ -151,6 +168,12 @@ After meaningful structural changes and before release, use
 [audit-release-readiness](../audit-release-readiness/SKILL.md) to verify frontmatter,
 permissions, references, manifests, installation guidance, and supported-harness
 packaging.
+
+Before declaring the work complete, inventory temporary resources created by
+the journey. Preserve durable transcripts, hashes, screenshots, or artifacts
+outside resources that will be removed. Release disposable resources whose
+declared condition is satisfied; retain only resources with a named continuing
+purpose, unresolved dependency, or explicit human retention decision.
 
 Distinguish these states:
 

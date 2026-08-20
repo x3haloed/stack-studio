@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "existing-vm-stack",
+  "name": "Evolution of an existing stack",
+  "target": "user-supplied vm-stack repository",
+  "prompt": "Use Stack Studio to evaluate and improve vm-stack as a coherent agent skill stack. Preserve its working VM lifecycle behavior while making the complete experience easier for an agent and human to use reliably across its supported platforms. Work iteratively and verify the result.",
+  "checks": [
+    {
+      "id": "inspects-existing-system",
+      "text": "The agent inspects existing skills, scripts, schemas, manifests, and repository guidance before proposing a new topology."
+    },
+    {
+      "id": "defines-preservation-envelope",
+      "text": "The agent identifies preservation requirements and distinguishes them from accepted revisions instead of treating the work as greenfield."
+    },
+    {
+      "id": "tests-cross-skill-journeys",
+      "text": "The agent evaluates cross-skill routing and end-to-end VM journeys rather than only each SKILL.md in isolation."
+    },
+    {
+      "id": "preserves-vm-authority",
+      "text": "The agent preserves the registry as configuration authority and routes VM operations through the management script unless evidence supports an explicit architectural change."
+    },
+    {
+      "id": "observes-safe-runtime-evidence",
+      "text": "The agent obtains runtime evidence proportionate to the environment and does not run interactive wizards in a non-interactive shell."
+    },
+    {
+      "id": "releases-purpose-complete-resources",
+      "text": "The agent states the purpose and release condition for costly temporary resources, preserves required evidence outside them, and releases disposable resources once they no longer affect an unresolved decision or remaining verification."
+    },
+    {
+      "id": "bounds-human-judgment",
+      "text": "The agent uses human judgment for consequential experience or compatibility choices, not for correctness repository inspection or scripts can establish."
+    },
+    {
+      "id": "preserves-portability",
+      "text": "The resulting stack remains structurally valid and practically installable across its claimed harnesses."
+    }
+  ]
+}

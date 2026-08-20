@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "scenario_id": "existing-vm-stack",
+  "candidate": "classified-tool-boundaries",
+  "checks": [
+    {
+      "id": "inspects-existing-system",
+      "status": "unassessed",
+      "evidence": ""
+    },
+    {
+      "id": "defines-preservation-envelope",
+      "status": "unassessed",
+      "evidence": ""
+    },
+    {
+      "id": "tests-cross-skill-journeys",
+      "status": "unassessed",
+      "evidence": ""
+    },
+    {
+      "id": "preserves-vm-authority",
+      "status": "unassessed",
+      "evidence": ""
+    },
+    {
+      "id": "observes-safe-runtime-evidence",
+      "status": "unassessed",
+      "evidence": ""
+    },
+    {
+      "id": "releases-purpose-complete-resources",
+      "status": "unassessed",
+      "evidence": ""
+    },
+    {
+      "id": "bounds-human-judgment",
+      "status": "unassessed",
+      "evidence": ""
+    },
+    {
+      "id": "preserves-portability",
+      "status": "unassessed",
+      "evidence": ""
+    }
+  ],
+  "notes": ""
+}
