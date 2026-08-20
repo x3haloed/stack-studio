@@ -73,5 +73,52 @@ improve Stack Studio itself.
 
 ## Evaluation regime
 
+- **Epoch:** `epoch-0-current-orientation-baseline`
+- **Active criterion:** Give a fresh agent only Stack Studio, a target repository,
+  and one of the three prompts in `evaluation-scenarios.md`. Observe whether the
+  agent derives and follows a complete stack-building loop without relying on
+  prior knowledge of Stack Studio. Judge the journey against the predeclared
+  scenario checks; do not change those checks while comparing a candidate
+  reorganization with the current repository.
+- **Anchors:** The outcome and goal invariants above; the user's authority over
+  consequential intent; repository evidence; preservation of working authoring,
+  validation, and cross-harness packaging capabilities; and the raw transcripts
+  produced by fresh-agent runs.
+- **Dependent evidence:** Any pass/fail judgment, comparison, or conclusion
+  derived from the three scenarios under this epoch.
+
 ## Prediction errors
 
+### Stack-level progress has split ownership
+
+- **Expected:** `create-stack` would carry an agent through the authoritative
+  end-to-end stack-building loop.
+- **Observed:** A fresh agent treated `create-stack` as the domain umbrella but
+  independently selected `iterate-toward-outcomes` as the authority for
+  continued progress; no explicit handoff connects them.
+- **Uncertain:** Which concepts and transitions should be absorbed by the
+  surviving stack-level authority, and which still benefit from separate skill
+  routing.
+- **Evidence:** `.codex/current-agent-journey.md`, sections 2 and 4.
+
+### Stack coherence has no evaluation authority
+
+- **Expected:** Stack Studio would determine whether the assembled skills work
+  together to orient an agent and accomplish the stack-level outcome.
+- **Observed:** `writing-skills` evaluates individual skills and
+  `audit-and-publish` checks structural packaging, but neither owns cross-skill
+  routing, interaction, coverage, or end-to-end outcome evaluation.
+- **Uncertain:** Whether stack-level evaluation belongs inside the primary loop
+  or warrants a specialized supporting skill and toolchain.
+- **Evidence:** `.codex/current-agent-journey.md`, sections 3 and 4.
+
+### Publication stops at preparation
+
+- **Expected:** `audit-and-publish` would carry a completed stack through the
+  publication outcome named by the skill.
+- **Observed:** The skill audits and prepares repositories but specifies no
+  versioning, tagging, release, registry, marketplace, or publication
+  transaction.
+- **Uncertain:** Which publication destinations and actions Stack Studio should
+  own versus hand off explicitly as external operations.
+- **Evidence:** `.codex/current-agent-journey.md`, section 4.
