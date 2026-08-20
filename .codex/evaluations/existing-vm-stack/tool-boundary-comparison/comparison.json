@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "scenario_id": "existing-vm-stack",
+  "baseline": "purpose-bound-resource-lifecycle",
+  "candidate": "classified-tool-boundaries",
+  "baseline_counts": {
+    "fail": 2,
+    "pass": 2,
+    "not_exercised": 4
+  },
+  "candidate_counts": {
+    "fail": 0,
+    "pass": 8,
+    "not_exercised": 0
+  },
+  "improvements": [
+    "defines-preservation-envelope",
+    "tests-cross-skill-journeys",
+    "observes-safe-runtime-evidence",
+    "releases-purpose-complete-resources",
+    "bounds-human-judgment",
+    "preserves-portability"
+  ],
+  "regressions": [],
+  "transitions": [
+    {
+      "id": "inspects-existing-system",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "defines-preservation-envelope",
+      "before": "not_exercised",
+      "after": "pass"
+    },
+    {
+      "id": "tests-cross-skill-journeys",
+      "before": "not_exercised",
+      "after": "pass"
+    },
+    {
+      "id": "preserves-vm-authority",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "observes-safe-runtime-evidence",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "releases-purpose-complete-resources",
+      "before": "not_exercised",
+      "after": "pass"
+    },
+    {
+      "id": "bounds-human-judgment",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "preserves-portability",
+      "before": "not_exercised",
+      "after": "pass"
+    }
+  ]
+}

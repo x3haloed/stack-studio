@@ -107,17 +107,6 @@ improve Stack Studio itself.
 
 ## Prediction errors
 
-### Completion guidance did not cause resource release
-
-- **Expected:** An agent following Stack Studio would carry an operational stack
-  journey through a complete, evidence-backed stopping condition.
-- **Observed:** Behavioral validation completed, but two costly disposable VMs
-  remained until the user identified that they had served their purpose.
-- **Uncertain:** Whether explicit controller guidance and a fixed scenario check
-  are sufficient for a fresh agent to preserve evidence and release temporary
-  resources without a user reminder.
-- **Evidence:** `.codex/evaluations/field-trials/vm-stack-windows/observation.md`
-
 ### Unclassified script probing launched human-facing UI
 
 - **Expected:** A fresh agent would inspect the existing stack and obtain
