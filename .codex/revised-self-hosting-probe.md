@@ -3,7 +3,7 @@
 ## Conditions
 
 A fresh agent with no prior Stack Studio discussion received the self-hosting
-prompt from `evaluation-scenarios.md`. It could inspect only Stack Studio, could
+prompt from `evaluation-scenarios.json`. It could inspect only Stack Studio, could
 not edit files, and was asked to orient and choose the first useful work unit.
 
 ## Observed journey
@@ -62,4 +62,3 @@ scenario. Six checks passed and two remain unexercised.
   format; this probe was captured and judged manually.
 - Cross-harness claims remain structural rather than live semantic verification
   in every harness.
-

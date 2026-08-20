@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "scenarios": [
+    {
+      "id": "greenfield-etl",
+      "name": "Greenfield domain stack",
+      "target": "user-supplied etl-stack repository",
+      "prompt": "Use Stack Studio to help me turn this ETL stack concept into a coherent stack for reproducible, auditable AI-assisted data transformation. Work with me iteratively and carry it through implementation and verification.",
+      "checks": [
+        {"id": "preserves-outcome", "text": "The agent identifies and preserves the target's stated outcome and existing invariants before choosing a skill decomposition."},
+        {"id": "targets-etl-repo", "text": "The agent treats the ETL repository, not Stack Studio, as the implementation home."},
+        {"id": "bounds-human-decisions", "text": "The agent resolves consequential ETL scope questions with the user without making the user prescribe Stack Studio's workflow."},
+        {"id": "designs-coherent-topology", "text": "The agent designs skill boundaries, routing conditions, shared representations, and deterministic tooling as one system rather than generating disconnected skills."},
+        {"id": "tests-end-to-end", "text": "The agent obtains behavioral evidence for the assembled stack, including at least one end-to-end ETL journey, rather than relying only on frontmatter checks."},
+        {"id": "verifies-etl-invariants", "text": "The agent verifies reproducibility, auditability, source immutability, and useful reconciliation reporting against the target's recorded invariants."},
+        {"id": "finishes-honestly", "text": "The agent reaches a clear release-ready or externally blocked state and identifies publication actions that remain outside Stack Studio."}
+      ]
+    },
+    {
+      "id": "existing-vm-stack",
+      "name": "Evolution of an existing stack",
+      "target": "user-supplied vm-stack repository",
+      "prompt": "Use Stack Studio to evaluate and improve vm-stack as a coherent agent skill stack. Preserve its working VM lifecycle behavior while making the complete experience easier for an agent and human to use reliably across its supported platforms. Work iteratively and verify the result.",
+      "checks": [
+        {"id": "inspects-existing-system", "text": "The agent inspects existing skills, scripts, schemas, manifests, and repository guidance before proposing a new topology."},
+        {"id": "defines-preservation-envelope", "text": "The agent identifies preservation requirements and distinguishes them from accepted revisions instead of treating the work as greenfield."},
+        {"id": "tests-cross-skill-journeys", "text": "The agent evaluates cross-skill routing and end-to-end VM journeys rather than only each SKILL.md in isolation."},
+        {"id": "preserves-vm-authority", "text": "The agent preserves the registry as configuration authority and routes VM operations through the management script unless evidence supports an explicit architectural change."},
+        {"id": "observes-safe-runtime-evidence", "text": "The agent obtains runtime evidence proportionate to the environment and does not run interactive wizards in a non-interactive shell."},
+        {"id": "bounds-human-judgment", "text": "The agent uses human judgment for consequential experience or compatibility choices, not for correctness repository inspection or scripts can establish."},
+        {"id": "preserves-portability", "text": "The resulting stack remains structurally valid and practically installable across its claimed harnesses."}
+      ]
+    },
+    {
+      "id": "self-hosting",
+      "name": "Self-hosting reorganization",
+      "target": ".",
+      "prompt": "Use Stack Studio to define, refine, and reorganize Stack Studio so that an agent can reliably use it to produce coherent, tested, publishable skill stacks from incomplete human goals. Preserve its useful authoring, evaluation, auditing, and cross-harness capabilities while removing duplicated or competing workflow authority. Work with me iteratively and verify the result.",
+      "checks": [
+        {"id": "uses-self-hosting-loop", "text": "The agent recognizes the recursive task and uses Stack Studio's documented operating model rather than inventing an unrelated project process."},
+        {"id": "establishes-preservation-envelope", "text": "The agent establishes the human outcome and preservation envelope before committing to a replacement organization."},
+        {"id": "traces-current-authorities", "text": "The agent traces current authorities and coordination edges, including any split between create-stack and inherited generic iteration guidance."},
+        {"id": "metabolizes-project-lineage", "text": "The agent treats the project-skills lineage as reusable evidence rather than a synchronization or compatibility obligation."},
+        {"id": "establishes-one-progress-authority", "text": "The result has one explicit authority for continued stack-level progress and explicit transitions to supporting capabilities."},
+        {"id": "owns-stack-evaluation", "text": "The result establishes an owner and evidence path for stack-level behavioral coherence."},
+        {"id": "preserves-deterministic-tools", "text": "The agent preserves working deterministic tools unless evidence justifies replacement and verifies relevant contracts after structural changes."},
+        {"id": "reduces-inference-burden", "text": "A subsequent fresh agent can derive the intended end-to-end workflow with less unsupported inference than before the reorganization."}
+      ]
+    }
+  ]
+}

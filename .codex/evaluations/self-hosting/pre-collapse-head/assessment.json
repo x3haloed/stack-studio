@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "scenario_id": "self-hosting",
+  "candidate": "pre-collapse-head",
+  "checks": [
+    {
+      "id": "uses-self-hosting-loop",
+      "status": "pass",
+      "evidence": "The report enters through stack-studio-init and create-stack, reads the existing self-hosting frontier, and uses the repository's own iteration concepts."
+    },
+    {
+      "id": "establishes-preservation-envelope",
+      "status": "pass",
+      "evidence": "The orientation identifies agent-facing use, coherence, responsiveness to evidence, self-hosting, truthful authority, preserved tooling, and portability before selecting a work unit."
+    },
+    {
+      "id": "traces-current-authorities",
+      "status": "pass",
+      "evidence": "The authority map explicitly distinguishes create-stack from iterate-toward-outcomes and identifies the missing handoff between them."
+    },
+    {
+      "id": "metabolizes-project-lineage",
+      "status": "not_exercised",
+      "evidence": "The isolated snapshot did not include or permit inspection of the sibling project-skills repository, so lineage treatment could not be observed directly."
+    },
+    {
+      "id": "establishes-one-progress-authority",
+      "status": "fail",
+      "evidence": "The report finds two competing stack-level authorities and says the end-to-end lifecycle is emergent; it can only propose consolidating them as a future work unit."
+    },
+    {
+      "id": "owns-stack-evaluation",
+      "status": "fail",
+      "evidence": "The report states that stack-level evaluation is missing and that no production skill owns or transitions to the scenario-based evidence path."
+    },
+    {
+      "id": "preserves-deterministic-tools",
+      "status": "not_exercised",
+      "evidence": "The run was read-only and performed no structural change whose tool contracts could be verified."
+    },
+    {
+      "id": "reduces-inference-burden",
+      "status": "fail",
+      "evidence": "The report says a diligent agent can reconcile the workflow, but the intended process must be inferred rather than followed from one repository-owned path."
+    }
+  ],
+  "notes": "Read-only orientation run against commit 9cf0d6a, the repository state immediately before the authority collapse."
+}

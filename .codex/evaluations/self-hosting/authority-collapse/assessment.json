@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "scenario_id": "self-hosting",
+  "candidate": "authority-collapse",
+  "checks": [
+    {
+      "id": "uses-self-hosting-loop",
+      "status": "pass",
+      "evidence": "The report enters through create-stack, reads the persisted self-hosting outcome, and follows its explicit work and evaluation loop."
+    },
+    {
+      "id": "establishes-preservation-envelope",
+      "status": "pass",
+      "evidence": "The report enumerates the agent-facing, coherence, iteration, self-hosting, authority, judgment, tooling, and portability properties before selecting further work."
+    },
+    {
+      "id": "traces-current-authorities",
+      "status": "pass",
+      "evidence": "The report maps create-stack, writing-skills, audit-and-publish, scripts, the frontier, wizard, human authority, and conditional transition handlers."
+    },
+    {
+      "id": "metabolizes-project-lineage",
+      "status": "pass",
+      "evidence": "The report identifies adapted rather than mechanically copied iteration patterns as part of the preservation envelope and treats generic handlers as subordinate transitions."
+    },
+    {
+      "id": "establishes-one-progress-authority",
+      "status": "pass",
+      "evidence": "The report identifies create-stack as the clear continued-progress authority and finds the exceptional-condition skills explicitly bounded inside its loop."
+    },
+    {
+      "id": "owns-stack-evaluation",
+      "status": "pass",
+      "evidence": "The report follows create-stack's assembled-evaluation procedure and finds fixed scenarios plus deterministic initialization, assessment, and comparison tooling."
+    },
+    {
+      "id": "preserves-deterministic-tools",
+      "status": "not_exercised",
+      "evidence": "The fresh-agent run was read-only; although it observed passing stack_eval tests, it did not perform the structural change or verify all preserved tool contracts itself."
+    },
+    {
+      "id": "reduces-inference-burden",
+      "status": "pass",
+      "evidence": "The report derives one controller and all supporting transitions directly from create-stack, unlike the baseline's inferred reconciliation of two controllers."
+    }
+  ],
+  "notes": "Read-only orientation run against the authority-collapse candidate with the same prompt used for the pre-collapse baseline."
+}

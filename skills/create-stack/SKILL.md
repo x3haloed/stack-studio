@@ -144,6 +144,13 @@ conclusions. Compare candidates under the same criterion. When the criterion
 itself must change, complete an explicit evaluation-regime transition before
 using the new judgment to guide further work.
 
+For substantial comparisons or repeated evaluations, read
+[stack-evaluation.md](references/stack-evaluation.md) and use the bundled
+`scripts/stack_eval.py` to initialize runs, validate evidence-backed assessments,
+and compare candidates under the same scenario. Fresh-agent execution remains a
+harness operation; the script must not simulate independence by invoking the
+current agent recursively with hidden context.
+
 ## Audit and finish honestly
 
 After meaningful structural changes and before release, use

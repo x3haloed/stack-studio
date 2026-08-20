@@ -29,7 +29,7 @@ Stack Studio is a meta-suite of skills, reference blueprints, and verification t
 ### 1. Anthropic Claude Code
 
 **Option A: Install as a Plugin (Recommended)**
-Clone into your Claude plugins directory (or pass `--plugin-dir /path/to/stack-studio`):
+Clone into your Claude plugins directory (or pass `--plugin-dir <stack-studio-directory>`):
 ```bash
 git clone https://github.com/x3haloed/stack-studio.git ~/.claude/plugins/stack-studio
 ```
@@ -38,8 +38,8 @@ Claude Code will automatically discover the `.claude-plugin/plugin.json` manifes
 **Option B: Install as Standalone Skills**
 If you prefer adding skills directly to `~/.claude/skills/` without plugin packaging, clone the repository and symlink the individual skill folders:
 ```bash
-git clone https://github.com/x3haloed/stack-studio.git ~/Repos/stack-studio
-ln -s ~/Repos/stack-studio/skills/* ~/.claude/skills/
+git clone https://github.com/x3haloed/stack-studio.git stack-studio
+ln -s "$PWD"/stack-studio/skills/* ~/.claude/skills/
 ```
 
 ### 2. Cursor IDE
@@ -68,7 +68,7 @@ git submodule add https://github.com/x3haloed/stack-studio.git plugins/stack-stu
 Stack Studio includes an automated auditor to verify frontmatter, progressive disclosure limits, script permissions, and multi-platform plugin manifests:
 
 ```bash
-python3 skills/audit-and-publish/scripts/audit_stack.py /path/to/target-stack
+python3 skills/audit-and-publish/scripts/audit_stack.py <target-stack-directory>
 ```
 
 Options:

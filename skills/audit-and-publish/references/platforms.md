@@ -10,7 +10,7 @@ Claude Code supports modular capabilities either packaged as **Plugins** or as s
 
 ### Discovery & Plugin Architecture
 - **Official Plugin Manifest:** `.claude-plugin/plugin.json` located at the root of the plugin directory.
-- **Plugin Discovery Locations:** `~/.claude/plugins/<plugin-name>/` or loaded via `claude --plugin-dir /path/to/plugin`.
+- **Plugin Discovery Locations:** `~/.claude/plugins/<plugin-name>/` or loaded via `claude --plugin-dir <plugin-directory>`.
 - **Standalone Skills Location:** `~/.claude/skills/<skill-name>/SKILL.md` (individual skill folders directly inside `~/.claude/skills/`). Claude Code does not recursively scan subdirectories of `~/.claude/skills/` looking for nested skill bundles; a bundle repo must either be installed as a plugin with `.claude-plugin/plugin.json` or have its individual skill folders symlinked into `~/.claude/skills/`.
 - **Important Context Rule:** A `CLAUDE.md` located inside a plugin repository is **not** loaded as project context when the plugin is installed. Project instructions only load from the active workspace root or `~/.claude/CLAUDE.md`.
 
@@ -44,7 +44,7 @@ my-stack/
 ```
 
 ### Installation
-- **As a Plugin (Recommended):** Clone into `~/.claude/plugins/my-stack/` or test with `claude --plugin-dir /path/to/my-stack`.
+- **As a Plugin (Recommended):** Clone into `~/.claude/plugins/my-stack/` or test with `claude --plugin-dir <stack-directory>`.
 - **As Standalone Skills:** Symlink each folder in `skills/*` into `~/.claude/skills/`.
 - **Slash Commands:** Skills inside the plugin are accessible via the `/plugin-name:skill-name` namespace or direct skill name if uniquely matched.
 

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "scenario_id": "self-hosting",
+  "baseline": "pre-collapse-head",
+  "candidate": "authority-collapse",
+  "baseline_counts": {
+    "pass": 3,
+    "not_exercised": 2,
+    "fail": 3
+  },
+  "candidate_counts": {
+    "pass": 7,
+    "not_exercised": 1,
+    "fail": 0
+  },
+  "improvements": [
+    "metabolizes-project-lineage",
+    "establishes-one-progress-authority",
+    "owns-stack-evaluation",
+    "reduces-inference-burden"
+  ],
+  "regressions": [],
+  "transitions": [
+    {
+      "id": "uses-self-hosting-loop",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "establishes-preservation-envelope",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "traces-current-authorities",
+      "before": "pass",
+      "after": "pass"
+    },
+    {
+      "id": "metabolizes-project-lineage",
+      "before": "not_exercised",
+      "after": "pass"
+    },
+    {
+      "id": "establishes-one-progress-authority",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "owns-stack-evaluation",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "preserves-deterministic-tools",
+      "before": "not_exercised",
+      "after": "not_exercised"
+    },
+    {
+      "id": "reduces-inference-burden",
+      "before": "fail",
+      "after": "pass"
+    }
+  ]
+}

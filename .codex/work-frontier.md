@@ -75,7 +75,7 @@ improve Stack Studio itself.
 
 - **Epoch:** `epoch-0-current-orientation-baseline`
 - **Active criterion:** Give a fresh agent only Stack Studio, a target repository,
-  and one of the three prompts in `evaluation-scenarios.md`. Observe whether the
+  and one of the three prompts in `evaluation-scenarios.json`. Observe whether the
   agent derives and follows a complete stack-building loop without relying on
   prior knowledge of Stack Studio. Judge the journey against the predeclared
   scenario checks; do not change those checks while comparing a candidate
@@ -85,20 +85,10 @@ improve Stack Studio itself.
   validation, and cross-harness packaging capabilities; and the raw transcripts
   produced by fresh-agent runs.
 - **Dependent evidence:** Any pass/fail judgment, comparison, or conclusion
-  derived from the three scenarios under this epoch.
+  derived from the three scenarios under this epoch. Current self-hosting
+  evidence is stored under `.codex/evaluations/self-hosting/`.
 
 ## Prediction errors
-
-### Stack evaluation is specified but not operationalized
-
-- **Expected:** The fixed stack scenarios would provide a repeatable evidence
-  path for comparing the current repository with a candidate reorganization.
-- **Observed:** `create-stack` now owns stack-level evaluation and a fresh agent
-  followed the intended path, but the scenario was launched, captured, and
-  scored manually with no standard runner or persisted result schema.
-- **Uncertain:** What minimum tooling makes stack-level evaluations repeatable
-  without imposing the individual-skill benchmark system's full ceremony.
-- **Evidence:** `.codex/revised-self-hosting-probe.md`.
 
 ### Publication stops at preparation
 
