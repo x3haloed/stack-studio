@@ -1,6 +1,6 @@
 ---
 name: discover-goal-invariants
-description: Use after live behavior, user feedback, performance evidence, integration constraints, maintenance experience, or a resolved prediction error shows that some property may be constitutive of success even though it was absent from the original brief.
+description: Use when live behavior, user feedback, performance evidence, integration constraints, maintenance experience, or a resolved prediction error shows that some property may be constitutive of success even though it was absent from the original brief.
 ---
 
 # Discover Goal Invariants

@@ -1,6 +1,6 @@
 ---
 name: evolve-evaluation-regime
-description: Use at a designated evaluation checkpoint or when trusted evidence suggests the active evaluation regime is saturated, gameable, miscalibrated, blind to a newly admitted goal invariant, or no longer distinguishes plausible improvements. The regime includes the evaluator, sampling or replay protocol, task weighting, and final scoring rule. Do not use to rewrite the outcome, move goalposts after an unfavorable result, or change evaluation during an unfinished candidate comparison.
+description: Use when a designated evaluation checkpoint is reached or trusted evidence suggests the active evaluation regime is saturated, gameable, miscalibrated, blind to a newly admitted goal invariant, or no longer distinguishes plausible improvements. The regime includes the evaluator, sampling or replay protocol, task weighting, and final scoring rule. Do not use to rewrite the outcome, move goalposts after an unfavorable result, or change evaluation during an unfinished candidate comparison.
 ---
 
 # Evolve Evaluation Regime

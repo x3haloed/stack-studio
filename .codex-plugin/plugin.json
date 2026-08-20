@@ -2,8 +2,5 @@
   "name": "stack-studio",
   "version": "1.0.0",
   "description": "A meta-suite for designing, iterating, evaluating, and preparing coherent agent skill stacks for release.",
-  "author": {
-    "name": "Stack Studio Contributors"
-  },
   "skills": "./skills/"
 }

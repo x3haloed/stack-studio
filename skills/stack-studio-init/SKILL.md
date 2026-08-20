@@ -1,6 +1,6 @@
 ---
 name: stack-studio-init
-description: Use one time before running any other stack-studio skills.
+description: Use when beginning work with Stack Studio and its skills have not yet been oriented in the current task; run once before other Stack Studio skills.
 ---
 
 1. Figure out what OS this harness is running on.

@@ -125,7 +125,7 @@ present.
 ## Evaluate assembled behavior
 
 `create-stack` owns stack-level evaluation. `writing-skills` may evaluate an
-individual skill, and `audit-and-publish` may validate repository structure, but
+individual skill, and `audit-release-readiness` may validate repository structure, but
 neither result proves that the assembled stack accomplishes its outcome.
 
 Use realistic end-to-end prompts covering the stack's primary journeys and
@@ -154,7 +154,7 @@ current agent recursively with hidden context.
 ## Audit and finish honestly
 
 After meaningful structural changes and before release, use
-[audit-and-publish](../audit-and-publish/SKILL.md) to verify frontmatter,
+[audit-release-readiness](../audit-release-readiness/SKILL.md) to verify frontmatter,
 permissions, references, manifests, installation guidance, and supported-harness
 packaging.
 

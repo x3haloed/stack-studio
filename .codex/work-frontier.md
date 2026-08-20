@@ -64,12 +64,12 @@ improve Stack Studio itself.
   principle and supports reliable stack production without displacing human
   authority.
 
-- **Produced stacks remain practically portable.** Stack Studio must help
-  agents account for the discovery, packaging, and instruction conventions of
-  the supported coding-agent harnesses rather than producing repositories that
-  work only in the environment where they were authored.
-  **Evidence:** Cross-harness creation, auditing, and publication are part of
-  Stack Studio's existing stated purpose and tooling.
+- **Produced stacks make calibrated portability claims.** Stack Studio must
+  separate shared skill structure, harness-specific packaging, observed
+  discovery, observed behavior, and completed publication so an agent never
+  promotes file presence into a stronger support claim.
+  **Evidence:** The release-readiness contract now defines an evidence ladder
+  and deterministic adapters separately for Claude Code and OpenAI packaging.
 
 ## Evaluation regime
 
@@ -90,13 +90,15 @@ improve Stack Studio itself.
 
 ## Prediction errors
 
-### Publication stops at preparation
+### Resolved: publication stops at preparation
 
 - **Expected:** `audit-and-publish` would carry a completed stack through the
   publication outcome named by the skill.
 - **Observed:** The skill audits and prepares repositories but specifies no
   versioning, tagging, release, registry, marketplace, or publication
   transaction.
-- **Uncertain:** Which publication destinations and actions Stack Studio should
-  own versus hand off explicitly as external operations.
-- **Evidence:** `.codex/current-agent-journey.md`, section 4.
+- **Resolution:** Renamed the capability to `audit-release-readiness`; its
+  authority ends at an evidence-backed handoff. Destination-specific publishing
+  remains a separately authorized external transaction.
+- **Evidence:** `skills/audit-release-readiness/SKILL.md` and the deterministic
+  auditor's support-evidence report.
